@@ -30,7 +30,7 @@ public class Payment {
         System.out.print("Enter the amout of money: ");
         double money = Utility.readInt(8);
         LocalDate start = LocalDate.now(); // Create a date object
-        LocalDate end = start.plusDays(day);
+        LocalDate end = start.plusDays(day-1);
         
         boolean successful = false;
         if (money >= total_price) {
@@ -46,7 +46,7 @@ public class Payment {
                 stmt.setString(1, login_id);
                 stmt.setString(2, start.toString());
                 stmt.setString(3, end.toString());
-                stmt.setDouble(4, money);
+                stmt.setDouble(4, total_price);
                 stmt.setDouble(5, price_per_day);
                 stmt.setBoolean(6, successful);
                 stmt.executeUpdate();

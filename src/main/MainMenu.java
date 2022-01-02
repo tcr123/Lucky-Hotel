@@ -54,17 +54,20 @@ public class MainMenu {
         try
         {
             ResultSet set = Payment.paymentHistory(login_id);
-            Transaction rm = new Transaction();
+            int i = 1;
             while(set.next()) {
+                Transaction rm = new Transaction();
+                rm.setTransactionID(i);
                 rm.setDateBookingStart(set.getString("startDay"));
                 rm.setDateBookingEnd(set.getString("endDay"));
                 rm.setAmountPaid(set.getDouble("money"));
                 rm.setRoomPrice(set.getDouble("pricePerDay"));
                 rm.setSuccessful(set.getBoolean("successful"));
                 tr.add(rm);
+                i++;
             }   
             
-            for (Transaction e: tr) {
+            for (Transaction e : tr) {
                 e.to_String();
             }
         } catch (Exception e) {

@@ -77,7 +77,7 @@ public class Transaction {
         System.out.println("Amount of paid: "+amountPaid);
         System.out.println("Room price: "+roomPrice);
         System.out.printf("Successful: "+successful);
-        System.out.println("");
+        System.out.println("\n");
     }
 }
 
