@@ -7,6 +7,8 @@ import database.Review;
 import database.User_Database;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class MainMenu {
@@ -152,7 +154,39 @@ public class MainMenu {
 
     public void listrooms() {
         System.out.println("=======All rooms========");
-        Database.displayRoom();
+        System.out.println("\n");
+        System.out.println("A.Normal");
+        System.out.println("B.Price");
+        System.out.println("C.Number of Guest");
+        System.out.println("D.Number of bed");
+        System.out.println("D.Review");
+        System.out.print("What is your request now?Please select[A-E]:");
+        key = Utility.readChar();
+        
+        ArrayList<Room> roomList = new ArrayList<Room>();
+        
+        switch (key) {
+            case 'A':
+                roomList = ConvertClass.Convertor(Database.displayRoom());
+                break;
+            case 'B':
+                roomList = ConvertClass.Convertor(Database.displayRoomByPrice());
+                break;
+            case 'C':
+                roomList = ConvertClass.Convertor(Database.displayRoomByGuest());
+                break;
+            case 'D':
+                roomList = ConvertClass.Convertor(Database.displayRoomByBed());
+                break;
+            case 'E':
+                roomList = ConvertClass.Convertor(Database.displayRoom());
+                Collections.sort(roomList, new SortByReview());
+                break;
+        }
+        
+        for (Room r : roomList) {
+            r.to_String_LessDetail();
+        }
         
         System.out.println("\n");
         System.out.println("A.Booking List");
@@ -288,5 +322,16 @@ public class MainMenu {
         }
     }
 
-
+    private static class SortByReview implements Comparator<Room>{
+        public int compare(Room r1, Room r2) {
+            double value = r1.getAverageRating() - r2.getAverageRating();
+            
+            if (value < 0) 
+                return -1;
+            else if (value > 0)
+                return 1;
+            
+            return 0;
+        }
+    }
 }

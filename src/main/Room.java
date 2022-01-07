@@ -1,7 +1,5 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Room {
@@ -12,6 +10,7 @@ public class Room {
     double price;
     List<Double> rating;
     List<String> listOfReview;
+    double average_rating;
 
     public Room() {
         
@@ -52,7 +51,8 @@ public class Room {
         for (int i = 0; i < this.rating.size(); i++) {
             average += rating.get(i);
         }
-        return average/3;
+        this.average_rating = average/rating.size();
+        return average_rating;
     }
     
     public void setRoomID(String roomID) {
@@ -83,7 +83,19 @@ public class Room {
     public void setListOfReview(List<String> listOfReview) {
         this.listOfReview = listOfReview;
     }
+    
+    // display less detail
+    public void to_String_LessDetail() {
+        System.out.println("RoomID: "+roomID);
+        System.out.println("Description: "+description);
+        System.out.println("Amount of Guest: "+amountofGuest);
+        System.out.println("Amount of Bed: "+amountofBed);
+        System.out.println("Price: "+price);
+        System.out.printf("Average rating: %.2f\n", getAverageRating());
+        System.out.println();
+    }
 
+    // display whole detail
     public void to_String() {
         System.out.println("Room "+roomID+" selected");
         System.out.println("RoomID: "+roomID);

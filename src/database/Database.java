@@ -54,7 +54,7 @@ public class Database {
     }
     
     // display list of room
-    public static void displayRoom(){
+    public static ResultSet displayRoom(){
         try
         {
           Class.forName("com.mysql.cj.jdbc.Driver");
@@ -66,19 +66,14 @@ public class Database {
 
           ResultSet rs = st.executeQuery(query);
  
-          while (rs.next())
-          {       
-             String roomID = rs.getString("roomID");
-             System.out.format("Room ID:"+ "%s\n", roomID);
-          }
-           
-          st.close();
+          return rs;
         }
         catch (Exception e)
         {
           System.err.println("Got an exception! ");
           System.err.println(e.getMessage());
         }
+        return null;
     }
     
     // display the room has been selected
@@ -174,5 +169,71 @@ public class Database {
             e.printStackTrace();
             System.out.println("Book room failed, not able to access the server");
         }
+    }
+
+    public static ResultSet displayRoomByBed() {
+        try
+        {
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/room","root","helloworld@123");
+
+          String query = "SELECT * FROM room WHERE valid=true ORDER BY bed";
+
+          Statement st = conn.createStatement();
+
+          ResultSet rs = st.executeQuery(query);
+ 
+          return rs;
+        }
+        catch (Exception e)
+        {
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public static ResultSet displayRoomByGuest() {
+       try
+        {
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/room","root","helloworld@123");
+
+          String query = "SELECT * FROM room WHERE valid=true ORDER BY guest";
+
+          Statement st = conn.createStatement();
+
+          ResultSet rs = st.executeQuery(query);
+ 
+          return rs;
+        }
+        catch (Exception e)
+        {
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+        }
+       return null;
+    }
+
+    public static ResultSet displayRoomByPrice() {
+       try
+        {
+          Class.forName("com.mysql.cj.jdbc.Driver");
+          Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/room","root","helloworld@123");
+
+          String query = "SELECT * FROM room WHERE valid=true ORDER BY price";
+
+          Statement st = conn.createStatement();
+
+          ResultSet rs = st.executeQuery(query);
+ 
+          return rs;
+        }
+        catch (Exception e)
+        {
+          System.err.println("Got an exception! ");
+          System.err.println(e.getMessage());
+        }
+       return null;
     }
 }
