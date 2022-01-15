@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF; -fx-border-color: black; -fx-border-style: double;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fop_hotel_gui.userlogin">
+   <children>
+      <HBox prefHeight="400.0" prefWidth="222.0" style="-fx-background-color: #34ebde;" stylesheets="@style.css">
+         <children>
+            <Pane prefHeight="410.0" prefWidth="222.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="10.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@picture/hotel%20logo.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="15.0" layoutY="207.0" prefHeight="38.0" prefWidth="179.0" text="Contact Us : 012-3456789">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="240.0" prefHeight="38.0" prefWidth="196.0" text="Email : LuckyHotel@gmail.com">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="347.0" prefHeight="38.0" prefWidth="196.0" text="FOP Assignment Group 7">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></HBox>
+      <AnchorPane layoutX="222.0" prefHeight="400.0" prefWidth="377.0">
+         <children>
+            <Label layoutX="88.0" layoutY="-4.0" prefHeight="73.0" prefWidth="241.0" text="Welcome to Lucky Hotel" textAlignment="CENTER" textFill="#0e66eb" wrapText="true">
+               <font>
+                  <Font name="Times New Roman" size="22.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <Label layoutX="46.0" layoutY="128.0" prefHeight="46.0" prefWidth="94.0" text="Email :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="176.0" prefHeight="46.0" prefWidth="94.0" text="Password :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" layoutX="133.0" layoutY="142.0" prefHeight="26.0" prefWidth="196.0" promptText="XXXXXXX@gmail.com">
+               <effect>
+                  <Lighting diffuseConstant="1.51" specularConstant="0.87" specularExponent="40.0" surfaceScale="1.78">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="134.17" />
+                     </light>
+                  </Lighting>
+               </effect></TextField>
+            <Label layoutX="131.0" layoutY="286.0" prefHeight="26.0" prefWidth="94.0" text="Not a user ?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="signupbutton" layoutX="210.0" layoutY="283.0" mnemonicParsing="false" onAction="#UserSignup" style="-fx-background-color: transparent;" text="Sign Up !" textFill="#2d51ef" underline="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="password" layoutX="133.0" layoutY="187.0" prefHeight="26.0" prefWidth="196.0" promptText="Password">
+               <effect>
+                  <Lighting diffuseConstant="1.53" specularConstant="0.81" specularExponent="40.0" surfaceScale="1.78">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant elevation="137.47" />
+                     </light>
+                  </Lighting>
+               </effect></PasswordField>
+            <Button layoutX="135.0" layoutY="234.0" mnemonicParsing="false" onAction="#UserLogin" prefHeight="26.0" prefWidth="126.0" stylesheets="@style.css" text="Login" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></Button>
+            <ImageView fx:id="closeWindow" fitHeight="20.0" fitWidth="20.0" layoutX="339.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@close-button-png-30221.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="105.0" layoutY="317.0" text="Login As An Admin ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="224.0" layoutY="310.0" mnemonicParsing="false" onAction="#AdminLogin" style="-fx-background-color: transaparent;" text="Click here" textFill="#2d51ef" underline="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="83.0" layoutY="342.0" text="Forgot your password ?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="228.0" layoutY="335.0" mnemonicParsing="false" onAction="#ChangePassword" style="-fx-background-color: transparent;" text="Change Password" textFill="#2d51ef" underline="true">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="73.0" fitWidth="76.0" layoutX="162.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@picture/person-icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

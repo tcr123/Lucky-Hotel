@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="548.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fop_hotel_gui.BookRoom">
+   <children>
+      <Label layoutX="25.0" layoutY="22.0" prefHeight="42.0" prefWidth="87.0" text="Name :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="71.0" prefHeight="25.0" prefWidth="50.0" text="Email :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="114.0" text="Room.Type :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="149.0" text="Room.No :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="298.0" text="Check In :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="343.0" text="Check Out :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="185.0" text="Guest :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="218.0" text="Bed :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="254.0" text="Price Per Night :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="UserNameField" layoutX="84.0" layoutY="30.0" prefHeight="26.0" prefWidth="222.0" />
+      <TextField fx:id="UserEmailField" layoutX="84.0" layoutY="71.0" prefHeight="26.0" prefWidth="222.0" />
+      <Label fx:id="guestField" layoutX="98.0" layoutY="187.0" prefHeight="18.0" prefWidth="79.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="bedField" layoutX="98.0" layoutY="220.0" prefHeight="18.0" prefWidth="100.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="priceField" layoutX="145.0" layoutY="254.0" prefHeight="18.0" prefWidth="87.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="UserCheckIndate" layoutX="102.0" layoutY="295.0" />
+      <DatePicker fx:id="UserCheckOutData" layoutX="102.0" layoutY="340.0" onAction="#setPriceDayInfo" />
+      <Label layoutX="25.0" layoutY="386.0" text="Total Price :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalpriceField" layoutX="102.0" layoutY="386.0" onDragDetected="#setPriceDayInfo" prefHeight="20.0" prefWidth="43.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="421.0" text="Enter the price :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="165.0" layoutY="386.0" text="Total Day :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="totaldayField" layoutX="241.0" layoutY="386.0" onDragDetected="#setPriceDayInfo" prefHeight="20.0" prefWidth="72.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="EnterPrice" layoutX="139.0" layoutY="419.0" />
+      <Button fx:id="PayBook" layoutX="68.0" layoutY="459.0" mnemonicParsing="false" onAction="#BookAndPay" prefHeight="42.0" prefWidth="195.0" text="Pay &amp; Book Your Room" />
+      <ComboBox fx:id="RoomNoComboBox" layoutX="115.0" layoutY="147.0" prefWidth="150.0" />
+      <ComboBox fx:id="RoomTypeField" layoutX="114.0" layoutY="112.0" onAction="#updateRoomNoComboxBox" prefWidth="150.0" />
+   </children>
+</AnchorPane>

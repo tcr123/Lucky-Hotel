@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="253.0" prefWidth="396.0" style="-fx-border-radius: 20;" styleClass="anchor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fop_hotel_gui.UpdateRoomStatus">
+    <children>
+        <Label layoutX="34.0" layoutY="28.0" text="Room.Type :">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="35.0" layoutY="83.0" text="Room.No :">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="RoomNoField" layoutX="143.0" layoutY="82.0" onAction="#setRoomInfo" promptText="RoomNo" styleClass="textfield" stylesheets="@style.css" />
+        <Button fx:id="UpdateStatus" layoutX="282.0" layoutY="196.0" mnemonicParsing="false" onAction="#UpdateStatus" prefHeight="38.0" prefWidth="91.0" stylesheets="@style.css" text="Update Status" textFill="WHITE" />
+        <ComboBox fx:id="RoomTypeField" layoutX="143.0" layoutY="30.0" prefWidth="150.0" promptText="RoomType" styleClass="textfield" stylesheets="@style.css" />
+      <Label layoutX="36.0" layoutY="131.0" text="Status : ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="status" layoutX="114.0" layoutY="131.0" onDragDetected="#setRoomInfo" prefHeight="27.0" prefWidth="139.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="Status" layoutX="106.0" layoutY="178.0" prefWidth="150.0" promptText="Status" styleClass="textfield" stylesheets="@style.css" />
+      <Label layoutX="34.0" layoutY="177.0" text="Change">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

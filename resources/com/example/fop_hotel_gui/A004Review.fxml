@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fop_hotel_gui.A004Review">
+    <children>
+        <HBox prefHeight="54.0" prefWidth="858.0">
+            <children>
+                <Pane prefHeight="54.0" prefWidth="202.0">
+                    <children>
+                        <Label layoutX="26.0" layoutY="14.0" prefHeight="26.0" prefWidth="118.0" text="Lucky Hotel">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="goHome" mnemonicParsing="false" onAction="#goHome" prefHeight="65.0" prefWidth="86.0" style="-fx-background-color: Transparent;" text="Home" />
+                <Button fx:id="goRoom" mnemonicParsing="false" onAction="#goRoom" prefHeight="54.0" prefWidth="212.0" style="-fx-background-color: #03a9fc;" text="Room List" />
+                <Button fx:id="goBooking" mnemonicParsing="false" onAction="#goBooking" prefHeight="54.0" prefWidth="236.0" style="-fx-background-color: transparent;" text="Booking Room" />
+                <Button fx:id="goTransaction" mnemonicParsing="false" onAction="#goTransaction" prefHeight="54.0" prefWidth="210.0" style="-fx-background-color: Transparent;" text="Transaction" />
+            </children>
+        </HBox>
+        <TableView fx:id="A004ReviewTable" layoutX="11.0" layoutY="255.0" onDragDetected="#showA004ReviewTable" prefHeight="278.0" prefWidth="835.0">
+            <columns>
+                <TableColumn fx:id="Review" prefWidth="725.6000308990479" text="Review" />
+                <TableColumn fx:id="Rating" prefWidth="108.79998779296875" text="Rating" />
+            </columns>
+        </TableView>
+        <Button fx:id="BookRoom" layoutX="34.0" layoutY="553.0" mnemonicParsing="false" onAction="#BookRoom" text="Booking Room" />
+        <ImageView fitHeight="148.0" fitWidth="218.0" layoutX="249.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:/C:/Users/HO%20KAI%20CHONG/IdeaProjects/FOP_HOTEL_GUI/src/main/java/com/example/fop_hotel_gui/picture/A004Bathroom.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="478.0" layoutY="77.0" text="Room.Type=">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="478.0" layoutY="110.0" text="Guest = 5">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="478.0" layoutY="144.0" text="Bed = 3">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="478.0" layoutY="180.0" text="Price Per Night = 150">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="148.0" fitWidth="200.0" layoutX="23.0" layoutY="72.0" pickOnBounds="true" smooth="false">
+            <image>
+                <Image url="file:/C:/Users/HO%20KAI%20CHONG/IdeaProjects/FOP_HOTEL_GUI/src/main/java/com/example/fop_hotel_gui/picture/A004.jpg" />
+            </image></ImageView>
+        <Button fx:id="back" layoutX="752.0" layoutY="553.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="87.0" text="Back" />
+        <Label layoutX="659.0" layoutY="96.0" prefHeight="54.0" prefWidth="164.0" text="Average Rating">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <Label fx:id="AverageRating" layoutX="710.0" layoutY="156.0" onDragDetected="#UpdateReview" prefHeight="39.0" prefWidth="95.0">
+         <font>
+            <Font size="27.0" />
+         </font></Label>
+      <Button layoutX="142.0" layoutY="553.0" mnemonicParsing="false" onAction="#AddReview" text="Add Review" />
+      <Button layoutX="693.0" layoutY="75.0" mnemonicParsing="false" onAction="#UpdateReview" text="Show Average" />
+      <TextField fx:id="RoomType" editable="false" layoutX="557.0" layoutY="75.0" prefHeight="26.0" prefWidth="49.0" text="A004" />
+    </children>
+</AnchorPane>

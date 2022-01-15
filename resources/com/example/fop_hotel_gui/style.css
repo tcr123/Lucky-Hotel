@@ -1,0 +1,17 @@
+.button{
+
+    -fx-background-color: linear-gradient(#42b6f5, #4284f5);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.anchor {
+
+
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+-fx-background-color: linear-gradient( #12D8FA,#A6FFCB);
+}
+
+.textfield{
+-fx-background-color: linear-gradient(#ffffff);
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
